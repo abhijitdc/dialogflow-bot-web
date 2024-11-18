@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertex AI Conversational Demo</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center; /* Centers everything on the page */
+        }
+
+        #hero {
+            background-image: url('new-hero.jpeg'); 
+            background-size: cover;
+            background-position: center;
+            height: 400px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: red;
+        }
+         #hero img {
+            display: block; /* Makes the image a block element so margin: auto works */
+            margin: 0 auto 20px; /* Auto left/right margin centers the image, 20px bottom margin */
+            max-width: 200px; /* Limits the max width to prevent overflow*/
+           height: auto;
+        }
+
+
+        #intro, div {  /* Targets both #intro and any <div> */
+            padding: 20px;
+            text-align: center; /* Ensures content within these sections is centered */
+
+        }
+        div p{
+            text-align: center;
+        }
+
+
+        #explanation-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 80%;
+        }
+
+        footer {
+            background-color: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        df-messenger {
+            /* Removed fixed positioning */
+            /* Other styles remain as they were */
+           margin: 0 auto; /* Center the chatbot horizontally */
+            display: block; /* Ensure it takes up the full width */
+
+        }
+        .container {
+          display: flex; /* Enables flexbox layout */
+          align-items: center; /* Vertically aligns items (optional) */
+          justify-content: center; /* Horizontally aligns items (optional) */
+        }
+
+        .item {
+            display: inline-block;
+            vertical-align: middle; /* Vertically aligns items */
+            margin-right: 10px;  /* Add spacing between items */
+        }
+
+        .divider {
+            border-left: 1px solid #cdcbcb; /* Example: thin vertical divider*/
+            margin: 0 10px; /* Some left/right margin for spacing */
+            padding: 2px;
+        }
+
+        botm-section{
+            background-color: #ded9d9;
+            padding: 20px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+  <section id="hero">
+  </section>
+
+  <div class="container">
+    <img class="item" src="gemini.svg" alt="Gemini Logo" height="50" width="50" />
+    <h1 class="item">Vertex AI Conversational Demo</h1>
+ </div>
+<section id="intro">
+ 
+    <h2>What is a Data Store Agent?</h2>
+    <p>A generative + conversational AI feature within Vertex AI Conversation and Dialogflow CX.</p>
+</section>
+
+<div>
+  <h2>How it works</h2>
+  <p>You provide a website, unstructured data, or structured data, then Data Store Agent indexes your content and creates a virtual agent that is powered by large language models. Users can then chat, ask questions, and have a conversation about the content.</p>
+</div>
+<hr> <div class="divider"></div>
+<div class="botm-section">
+<div>
+  <h2>Try it yourself!</h2>
+  <p>Ask the chatbot below about services like, How to get a digital driver license? How to apply for hot water rebate?</p>
+  <img id="explanation-image" src="how-chat-works.png" alt="Lifecycle of a Data Store Agent Question">
+</div>
+
+    
+    <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+    <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+    <df-messenger
+    oauth-client-id="" 
+    project-id=""
+    agent-id=""
+    language-code="en"
+    max-query-length="-1">
+    <df-messenger-chat-bubble
+    chat-title="VertexAI Bot">
+    </df-messenger-chat-bubble>
+    </df-messenger>
+    <style>
+    df-messenger {
+        z-index: 999;
+        position: fixed;
+        --df-messenger-font-color: #000;
+        --df-messenger-font-family: Google Sans;
+        --df-messenger-chat-background: #d5dae6;
+        --df-messenger-message-user-background: #d3e3fd;
+        --df-messenger-message-bot-background: #fff;
+        bottom: 16px;
+        right: 16px;
+    }
+    </style>
+</div>
+</body>
+</html>
+
